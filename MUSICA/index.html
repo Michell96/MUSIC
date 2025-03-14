@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUSICA | Songwriter Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background with musical wave effect -->
+    <div class="wave-background"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-text">MUSICA</span>
+            <i class="fas fa-music"></i>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#inicio" class="nav-link">Home</a></li>
+            <li><a href="#letras" class="nav-link">Lyrics</a></li>
+            <li><a href="#contacto" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="inicio" class="hero-section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="glitch-effect">Words that <span class="accent">Resonate</span></h1>
+                <p class="subtitle">Transforming emotions into lyrics that connect with the soul</p>
+                <div class="cta-buttons">
+                    <a href="#letras" class="btn primary-btn">View my lyrics</a>
+                    <a href="#contacto" class="btn secondary-btn">Contact</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-container">
+                    <img src="https://img.freepik.com/premium-photo/chalkboard-music-notes-musical-illustration-black-background_887552-14234.jpg" alt="Music Notes on Chalkboard" class="profile-image">
+                    <div class="vinyl-record"></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <p>Discover more</p>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Lyrics Section -->
+    <section id="letras" class="lyrics-section">
+        <div class="section-header">
+            <h2>My <span class="accent">Lyrics</span></h2>
+            <p>Explore my collection of lyrics or add a new creation</p>
+        </div>
+
+        <div class="lyrics-controls">
+            <button id="add-lyrics-btn" class="btn primary-btn">
+                <i class="fas fa-plus"></i> New Lyrics
+            </button>
+        </div>
+
+        <!-- Modal for adding lyrics -->
+        <div id="lyrics-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h3>Add New Lyrics</h3>
+                <form id="lyrics-form">
+                    <div class="form-group">
+                        <label for="song-title">Song Title</label>
+                        <input type="text" id="song-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="song-genre">Genre</label>
+                        <select id="song-genre">
+                            <option value="pop">Pop</option>
+                            <option value="rock">Rock</option>
+                            <option value="hiphop">Hip Hop</option>
+                            <option value="rb">R&B</option>
+                            <option value="folk">Folk</option>
+                            <option value="electronic">Electronic</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="song-lyrics">Lyrics</label>
+                        <textarea id="song-lyrics" rows="10" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="song-file">Or upload a text file</label>
+                        <input type="file" id="song-file" accept=".txt">
+                    </div>
+                    <button type="submit" class="btn primary-btn">Save</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Lyrics cards container -->
+        <div class="lyrics-container" id="lyrics-container">
+            <!-- Lyrics cards will be dynamically generated with JavaScript -->
+            <div class="empty-state" id="empty-lyrics">
+                <i class="fas fa-music fa-3x"></i>
+                <p>No lyrics yet. Add your first creation!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact-section">
+        <div class="section-header">
+            <h2>Let's Talk <span class="accent">Music</span></h2>
+            <p>Interested in collaborating? Send me a message</p>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>contact@yourlyrics.com</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Music City, USA</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-spotify"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-soundcloud"></i></a>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn primary-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-text">MUSICA</span>
+                <i class="fas fa-music"></i>
+            </div>
+            <p class="copyright">© 2023 Songwriter Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html> 
